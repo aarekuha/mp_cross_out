@@ -60,12 +60,12 @@ def _generate_large_json(num_fields=1000, field_length=20):
 data = _generate_large_json()
 with open("example.out", "wb") as f:
     f.write(str(data).encode())
+json_str = json.dumps(data)
 
 
 def generate_large_json():
     while True:
         # Generate a large JSON message
-        json_str = json.dumps(data)
         logger.info(json_str)
 
 

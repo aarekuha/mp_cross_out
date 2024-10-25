@@ -1,9 +1,9 @@
 import logging
 from logging.handlers import QueueListener
-from multiprocessing import Queue
+import multiprocessing
 
 
-log_queue = Queue(maxsize=10_000)
+log_queue = multiprocessing.Manager().Queue(maxsize=10_000)
 
 # gunicorn.conf.py
 def post_fork(server, worker):
